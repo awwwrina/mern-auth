@@ -1,11 +1,13 @@
-import {Field} from "formik";
+import { Field } from "formik";
+import { Label } from "./Label";
+import { Errors } from "./Errors";
 
-export const Input = ({ name, label,  type, touched, errors }) => {
+export const Input = ({ name, label, type, touched, errors }) => {
 	return (
 		<>
-			<label htmlFor={name}>{label}</label>
-			<Field name={name} type={type} autoComplete="off" />
-			{errors[name] && touched[name] ? <div>{errors[name]}</div> : null}
+			<Label name={name} label={label} />
+			<Field name={name} type={type} />
+			<Errors errors={errors} touched={touched} name={name} />
 		</>
 	);
 };
