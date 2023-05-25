@@ -1,10 +1,12 @@
 import { Field } from "formik";
+import { Label } from "./Label";
+import { Errors } from "./Errors";
 
 export const SelectInput = ({name, label, options, touched, errors}) => {
 
 	return (
 		<>
-			<label htmlFor={name}>{label}</label>
+			<Label name={name} label={label} />
 			<Field name={name} as="select">
 				<option disabled />
 				{options.map((item) => (
@@ -13,8 +15,7 @@ export const SelectInput = ({name, label, options, touched, errors}) => {
 					</option>
 				))}
 			</Field>
-
-			{errors[name] && touched[name] ? <div>{errors[name]}</div> : null}
+			<Errors errors={errors} touched={touched} name={name} />
 		</>
 	);
 };
