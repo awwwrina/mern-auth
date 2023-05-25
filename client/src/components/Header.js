@@ -1,23 +1,25 @@
 import { Link } from "react-router-dom";
 
-const navItems = [{  name: "Главная", href: "/" },{ name: "Аккаунт", href: "/account" },{ name: "Люди", href: "/people" }  ];
+const navItems = [
+	{ name: "Главная", href: "/" },
+	{ name: "Аккаунт", href: "/account" },
+	{ name: "Люди", href: "/people" },
+];
 
-export const Header = ()  => {
+export const Header = () => {
 	return (
 		<header>
 			<div className="container">
-                <nav>
-                    <ul>
-					{navItems.map(({ name, href }) => (
-						<li
-						>
-							<Link to={href}>{name}</Link>
-						</li>
-					))}
-				    </ul>
-                </nav>
-				
+				<nav>
+					<ul>
+						{navItems.map(({ name, href }) => (
+							<li key={name}>
+								<Link to={href}>{name}</Link>
+							</li>
+						))}
+					</ul>
+				</nav>
 			</div>
 		</header>
 	);
-}
+};
