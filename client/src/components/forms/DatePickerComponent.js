@@ -22,6 +22,7 @@ export const DatePickerComponent = ({setFieldValue}) => {
 			showYearDropdown={true}
 			dateFormatCalendar="MMMM"
 			dropdownMode="select"
+			dateFormat="dd MMMM yyyy"
 			minDate={moment().subtract(100, "years")._d}
 			maxDate={moment().subtract(18, "years")._d}
 		/>
