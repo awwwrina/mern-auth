@@ -76,15 +76,15 @@
             border: 1px solid $blue;
             line-height: 40px;
             height: 40px;
-            // border-width: 0;
             outline: none;
             border-radius: 20px;
             color: $dark-blue;
             font-weight: 500;
             appearance: none;
-
-            &:focus {
-                border: 2px solid $blue;
+            box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+            &:hover::before {
+                color: rgba(255, 255, 255, 0.6);
+                background-color: rgba(255, 255, 255, 0.2);
             }
         }
         input[type='file'] {
@@ -106,4 +106,22 @@
         }
     }
 
+}
+
+.select {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  padding: 0 4em 0 1em;
+  background: url('../img/icons/caret-down.svg') no-repeat right 0.8em center / 1.4em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
 }

@@ -7,14 +7,15 @@ export const SelectInput = ({name, label, options, touched, errors}) => {
 	return (
 		<>
 			<Label name={name} label={label} />
-			<Field name={name} as="select">
-				<option disabled />
-				{options.map((item) => (
-					<option key={item.value} value={item.value}>
-						{item.name}
-					</option>
-				))}
-			</Field>
+			
+				<Field name={name} as="select" className='select'>
+					{options.map((item) => (
+						<option key={item.value} value={item.value}>
+							{item.name}
+						</option>
+					))}
+				</Field>
+			
 			<Errors errors={errors} touched={touched} name={name} />
 		</>
 	);
